@@ -7,9 +7,16 @@ const initialState = {
 
 //ACTION CONSTS
 
+export const INCREMENT = 'INCREMENT'
+export const DECREMENT = 'DECREMENT'
+
 //REDUCER
 const reducer = (state = initialState, action) => {
     switch(action.type) {
+        case INCREMENT:
+            return {...state, currentValue: state.currentValue + action.amount}
+        case DECREMENT:
+            return {...state, currentValue: state.currentValue - action.amount}
         default:
             return state
     }
